@@ -9,3 +9,4 @@ export async function fetchShowById(id: number) {
   const res = await fetch(`${BASE_URL}/id/${id}`);
   return res.json();
 }
+ 
