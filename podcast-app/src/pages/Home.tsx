@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import React, { useEffect, useState } from "react";
 
 interface Preview {
@@ -33,6 +35,7 @@ function Home() {
       ) : (
         <div style={{ display: "grid", gap: "1rem" }}>
           {shows.map((show) => (
+            <Link to={`/show/${show.id}`} key={show.id} style={{ textDecoration: "none", color: "inherit" }}>
             <div
               key={show.id}
               style={{
@@ -49,6 +52,7 @@ function Home() {
               <h2>{show.title}</h2>
               <p>{show.description}</p>
             </div>
+            </Link>
           ))}
         </div>
       )}
@@ -57,6 +61,7 @@ function Home() {
 }
 
 export default Home;
+
 
 
   
